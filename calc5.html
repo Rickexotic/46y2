@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>46&2 Consulting | Calculadora Honorarios Chile</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Aptos, Arial, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    color:white;
+    min-height:100vh;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    height:55px;
+}
+
+.logo span{
+    font-size:1.3rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    font-size:1.2rem;
+    line-height:1.8;
+    opacity:.9;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:50px;
+    background:#38bdf8;
+    color:#0f172a;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#7dd3fc;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    font-size:2.2rem;
+    color:#38bdf8;
+    margin-bottom:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+}
+
+/* FORM */
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+}
+
+input,
+select{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#38bdf8;
+    color:#0f172a;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#7dd3fc;
+}
+
+.error{
+    color:#ffb4b4;
+    margin-top:10px;
+}
+
+.resultado{
+    margin-top:20px;
+    padding:20px;
+    border-radius:15px;
+    background:rgba(56,189,248,.15);
+}
+
+/* TABLE */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+th,
+td{
+    padding:12px;
+    border:1px solid rgba(255,255,255,.15);
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:rgba(0,0,0,.2);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <img src="logo3.png" alt="46&2 Logo">
+        <span>46&2 Consulting</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#historial">Historial</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+
+</nav>
+
+<section id="home" class="hero">
+
+    <h1>Calculadora de Boletas de Honorarios</h1>
+
+    <p>
+        Calcule automáticamente montos brutos,
+        líquidos y retenciones para boletas de honorarios
+        en Chile utilizando una experiencia moderna
+        desarrollada por 46&2 Consulting.
+    </p>
+
+    <a href="#calculadora" class="btn">
+        Comenzar
+    </a>
+
+</section>
+
+<section id="calculadora">
+
+    <h2 class="section-title">Calculadora</h2>
+
+    <div class="card">
+
+        <label>Tipo de cálculo</label>
+
+        <select id="tipo">
+            <option value="liquido">Tengo monto líquido</option>
+            <option value="bruto">Tengo monto bruto</option>
+        </select>
+
+        <label>Monto</label>
+
+        <input
+            type="number"
+            id="monto"
+            placeholder="Ingrese el monto">
+
+        <label>Retención (%)</label>
+
+        <input
+            type="number"
+            id="retencion"
+            value="14.5"
+            step="0.1">
+
+        <div id="error" class="error"></div>
+
+        <button type="button" onclick="calcular()">
+            Calcular
+        </button>
+
+        <div id="resultado" class="resultado">
+            Ingrese los datos y presione Calcular.
+        </div>
+
+    </div>
+
+</section>
+
+<section id="historial">
+
+    <h2 class="section-title">Historial</h2>
+
+    <div class="card">
+
+        <button onclick="limpiarHistorial()">
+            Limpiar Historial
+        </button>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Bruto</th>
+                    <th>Retención</th>
+                    <th>Líquido</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaHistorial"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section id="contacto">
+
+    <h2 class="section-title">Contacto</h2>
+
+    <div class="card">
+        <p>46&2 Consulting</p>
+        <br>
+        <p>Transformación Digital · Automatización · Data & Analytics</p>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 46&2 Consulting. Todos los derechos reservados.
+</footer>
+
+<script>
+
+function formato(valor){
+
+    return new Intl.NumberFormat(
+        "es-CL",
+        {
+            style: "currency",
+            currency: "CLP",
+            maximumFractionDigits: 0
+        }
+    ).format(valor);
+
+}
+
+function calcular(){
+
+    const monto =
+        parseFloat(document.getElementById("monto").value);
+
+    const porcentaje =
+        parseFloatmentById("tipo").value;
+
+    const resultado =
+        document.getElementById("resultado");
+
+    const error =
+        document.getElementById("error");
+
+    error.innerHTML = "";
+
+    if(isNaN(monto) || monto <= 0){
+
+        error.innerHTML =
+            "Ingrese un monto válido.";
+
+        return;
+    }
+
+    if(isNaN(porcentaje) || porcentaje < 0 || porcentaje >= 100){
+
+        error.innerHTML =
+            "Ingrese una retención válida.";
+
+        return;
+    }
+
+    const tasa = porcentaje / 100;
+
+    let bruto;
+    let liquido;
+    let retencion;
+
+    if(tipo === "bruto"){
+
+        bruto = monto;
+        retencion = bruto * tasa;
+        liquido = bruto - retencion;
+
+    }else{
+
+        liquido = monto;
+        bruto = liquido / (1 - tasa);
+        retencion = bruto - liquido;
+    }
+
+    resultado.innerHTML = `
+        <h3>Resultado</h3>
+        <br>
+        <p><strong>Bruto:</strong> ${formato(bruto)}</p>
+        <br>
+        <p><strong>Retención:</strong> ${formato(retencion)}</p>
+        <br>
+        <p><strong>Líquido:</strong> ${formato(liquido)}</p>
+    `;
+
+    guardarHistorial({
+        fecha: new Date().toLocaleString('es-CL'),
+        bruto: formato(bruto),
+        retencion: formato(retencion),
+        liquido: formato(liquido)
+    });
+
+    cargarHistorial();
+}
+
+function guardarHistorial(item){
+
+    let historial =
+        JSON.parse(
+            localStorage.getItem("historial46") || "[]"
+        );
+
+    historial.unshift(item);
+
+    historial = historial.slice(0,50);
+
+    localStorage.setItem(
+        "historial46",
+        JSON.stringify(historial)
+    );
+}
+
+function cargarHistorial(){
+
+    let historial =
+        JSON.parse(
+            localStorage.getItem("historial46") || "[]"
+        );
+
+    document.getElementById(
+        "tablaHistorial"
+    ).innerHTML =
+    historial.map(item => `
+        <tr>
+            <td>${item.fecha}</td>
+            <td>${item.bruto}</td>
+            <td>${item.retencion}</td>
+            <td>${item.liquido}</td>
+        </tr>
+    `).join("");
+
+}
+
+function limpiarHistorial(){
+
+    localStorage.removeItem("historial46");
+
+    cargarHistorial();
+}
+
+window.onload = cargarHistorial;
+
+</script>
+
+</body>
+</html>
