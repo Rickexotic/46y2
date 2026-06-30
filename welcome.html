@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>46&2 Consulting</title>
 
     <style>
         * {
@@ -13,11 +13,57 @@
             font-family: Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: linear-gradient(135deg, #0f172a, #1e3a8a);
             color: white;
             min-height: 100vh;
         }
+
+        /* Navigation */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
 
         .hero {
             display: flex;
@@ -29,16 +75,17 @@
             padding: 2rem;
         }
 
-        h1 {
+        .hero h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
         }
 
-        p {
+        .hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin-bottom: 2rem;
             opacity: 0.9;
+            line-height: 1.6;
         }
 
         .btn {
@@ -49,36 +96,143 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
             background: #7dd3fc;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
+        /* Content Sections */
+
+        section {
+            padding: 100px 10%;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #38bdf8;
+        }
+
+        .section-content {
+            max-width: 900px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+
         footer {
-            position: fixed;
-            bottom: 20px;
-            width: 100%;
             text-align: center;
-            opacity: 0.7;
+            padding: 30px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        /* Mobile */
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 15px;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>Welcome to Our Website</h1>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">46&2 Consulting</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Transforming Vision Into Results</h1>
         <p>
-            We help businesses innovate, grow, and succeed with modern solutions,
-            strategic thinking, and exceptional service.
+            46&2 Consulting partners with organizations to drive strategic
+            transformation, improve operational performance, and unlock
+            sustainable growth in an ever-changing business landscape.
         </p>
-        <a href="#about" class="btn">Get Started</a>
+
+        <a href="#contact" class="btn">Schedule a Consultation</a>
     </section>
 
+    <!-- Services -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="section-content">
+            <p>
+                We help organizations solve complex business challenges through:
+            </p>
+            <br>
+            <ul>
+                <li>Strategic Planning & Business Growth</li>
+                <li>Digital Transformation</li>
+                <li>Operational Excellence</li>
+                <li<li>Process Optimization</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About 46&2 Consulting</h2>
+        <div class="section-content">
+            <p>
+                We believe meaningful transformation happens when organizations
+                align strategy, people, and technology. Our mission is to help
+                clients navigate change with confidence while building
+                capabilities that create long-term value.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="section-content">
+            <p>
+                Ready to discuss your next transformation initiative?
+            </p>
+
+            <br>
+
+            <p>
+                Email: info@46and2consulting.com<br>
+                Phone: +1 (555) 123-4567
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        © 2026 All Rights Reserved
+        <p>&copy; 2026 46&2 Consulting. All Rights Reserved.</p>
     </footer>
 
 </body>
