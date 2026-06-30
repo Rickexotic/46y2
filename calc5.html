@@ -369,7 +369,10 @@ function calcular(){
         parseFloat(document.getElementById("monto").value);
 
     const porcentaje =
-        parseFloatmentById("tipo").value;
+        parseFloat(document.getElementById("retencion").value);
+
+    const tipo =
+        document.getElementById("tipo").value;
 
     const resultado =
         document.getElementById("resultado");
@@ -412,20 +415,19 @@ function calcular(){
         liquido = monto;
         bruto = liquido / (1 - tasa);
         retencion = bruto - liquido;
+
     }
 
     resultado.innerHTML = `
         <h3>Resultado</h3>
         <br>
         <p><strong>Bruto:</strong> ${formato(bruto)}</p>
-        <br>
         <p><strong>Retención:</strong> ${formato(retencion)}</p>
-        <br>
         <p><strong>Líquido:</strong> ${formato(liquido)}</p>
     `;
 
     guardarHistorial({
-        fecha: new Date().toLocaleString('es-CL'),
+        fecha: new Date().toLocaleString("es-CL"),
         bruto: formato(bruto),
         retencion: formato(retencion),
         liquido: formato(liquido)
