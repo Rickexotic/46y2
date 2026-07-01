@@ -226,35 +226,83 @@ body.light .card{
     color:#111;
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .navbar{
+        padding:12px 20px;
+        height:72px;
+    }
+
+    .logo img{
+        height:42px;
+    }
+
+    .controls{
+        display:flex;
+        align-items:center;
+        gap:15px;
+    }
 
     .hamburger{
         display:block;
+        font-size:28px;
+    }
+
+    .theme-toggle{
+        font-size:22px;
     }
 
     .nav-links{
         display:none;
+        flex-direction:column;
         position:absolute;
-        top:75px;
+        top:72px;
         left:0;
         width:100%;
         background:#0f172a;
-        flex-direction:column;
-        padding:20px;
+        padding:10px 0;
+        z-index:999;
     }
 
     .nav-links.active{
         display:flex;
     }
 
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+        width:100%;
+        padding:15px 25px;
+    }
+
     .dropdown{
         position:static;
         opacity:1;
         visibility:visible;
+        min-width:100%;
+        border-radius:0;
+        background:rgba(255,255,255,0.05);
+    }
+
+    .mobile-language{
+        border-top:1px solid rgba(255,255,255,0.1);
+        margin-top:10px;
+        padding-top:10px;
     }
 
     .hero h1{
-        font-size:2.5rem;
+        font-size:2.3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
     }
 }
 </style>
@@ -268,6 +316,11 @@ body.light .card{
         <img src="logo3.png" alt="46&2 Consulting">
     </div>
 
+    <div class="controls">
+        <span class="theme-toggle" onclick="toggleTheme()">🌓</span>
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+    </div>
+
     <ul class="nav-links" id="menu">
 
         <li>
@@ -275,9 +328,13 @@ body.light .card{
         </li>
 
         <li class="nav-item">
-            <a href="#services" id="nav-services">Servicios</a>
+
+            <a href="#services" id="nav-services">
+                Servicios
+            </a>
 
             <ul class="dropdown">
+
                 <li>
                     <a href="calc5.html" id="menu-calendar">
                         Calendario Partidos
@@ -289,7 +346,9 @@ body.light .card{
                         Calculadora Honorarios
                     </a>
                 </li>
+
             </ul>
+
         </li>
 
         <li>
@@ -304,22 +363,19 @@ body.light .card{
             </a>
         </li>
 
+        <li class="mobile-language">
+            <a href="#" onclick="setLanguage('es');return false;">
+                🇪🇸 Español
+            </a>
+        </li>
+
+        <li class="mobile-language">
+            <a href="#" onclick="setLanguage('en');return false;">
+                🇺🇸 English
+            </a>
+        </li>
+
     </ul>
-
-    <div class="controls">
-
-        <button class="lang-btn" onclick="setLanguage('es')">
-            ES
-        </button>
-
-        <button class="lang-btn" onclick="setLanguage('en')">
-            EN
-        </button>
-
-        <span class="theme-toggle" onclick="toggleTheme()">🌓</span>
-        <span class="hamburger" onclick="toggleMenu()">☰</span>
-
-    </div>
 
 </nav>
 
