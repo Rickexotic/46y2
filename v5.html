@@ -449,11 +449,31 @@ body.light .card{
             type="text"
             placeholder="Nombre">
 
-        <input
-            id="email-field"
-            type="email"
-               rows="5"
-            placeholder="Mensaje"></textarea>
+       <form>
+
+    <input
+        id="name-field"
+        type="text"
+        placeholder="Nombre">
+
+    <input
+        id="email-field"
+        type="email"
+        placeholder="Correo Electrónico">
+
+    <textarea
+        id="message-field"
+        rows="5"
+        placeholder="Mensaje"></textarea>
+
+    <button
+        id="send-btn"
+        type="submit"
+        class="btn">
+        Enviar
+    </button>
+
+</form>
 
         <button
             id="send-btn"
@@ -570,6 +590,13 @@ en:{
 
 function setLanguage(lang){
 
+    function setLanguage(lang){
+
+    console.log("Language:", lang);
+
+    localStorage.setItem("language",lang);
+
+    const t = translations[lang];
     localStorage.setItem("language",lang);
 
     const t = translations[lang];
