@@ -4,12 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>46&2 Consulting Enterprise V5</title>
-
-<meta name="description" content="Consultoría estratégica, transformación digital y excelencia operacional.">
-<meta property="og:title" content="46&2 Consulting Enterprise">
-<meta property="og:description" content="Transformando visión en resultados.">
-<meta property="og:type" content="website">
+<title>46&2 Consulting Enterprise</title>
 
 <style>
 :root{
@@ -23,7 +18,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Aptos, Segoe UI, Arial, sans-serif;
+    font-family:Aptos, "Segoe UI", Arial, sans-serif;
 }
 
 html{
@@ -33,29 +28,7 @@ html{
 body{
     background:linear-gradient(135deg,var(--bg-primary),var(--bg-secondary));
     color:white;
-    transition:.3s;
 }
-.banner-section {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:24px;
-    overflow: hidden;
-    border-radius: 30px;
-}
-
-.banner-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    transition: transform 0.5s ease;
-}
-
-.banner-image:hover {
-    transform: scale(1.03);
-}    
-/* NAVBAR */
 
 .navbar{
     position:fixed;
@@ -66,13 +39,12 @@ body{
     justify-content:space-between;
     align-items:center;
     background:rgba(15,23,42,.92);
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
     z-index:1000;
 }
 
 .logo img{
     height:55px;
-    width:auto;
 }
 
 .nav-links{
@@ -82,9 +54,8 @@ body{
 }
 
 .nav-links a{
-    color:white;
     text-decoration:none;
-    font-weight:500;
+    color:white;
 }
 
 .nav-links a:hover{
@@ -99,7 +70,7 @@ body{
     position:absolute;
     top:100%;
     left:0;
-    min-width:240px;
+    min-width:220px;
     background:#0f172a;
     border-radius:12px;
     list-style:none;
@@ -115,23 +86,22 @@ body{
 
 .dropdown a{
     display:block;
-    padding:12px 18px;
-}
-
-.dropdown a:hover{
-    background:rgba(56,189,248,.15);
+    padding:12px;
 }
 
 .controls{
     display:flex;
-    gap:15px;
+    gap:10px;
     align-items:center;
 }
 
-.hamburger{
-    display:none;
-    font-size:28px;
+.lang-btn{
+    background:var(--accent);
+    border:none;
+    padding:6px 10px;
+    border-radius:6px;
     cursor:pointer;
+    font-weight:bold;
 }
 
 .theme-toggle{
@@ -139,7 +109,11 @@ body{
     font-size:22px;
 }
 
-/* HERO */
+.hamburger{
+    display:none;
+    cursor:pointer;
+    font-size:28px;
+}
 
 .hero{
     min-height:100vh;
@@ -167,23 +141,16 @@ body{
 
 .btn{
     display:inline-block;
-    text-decoration:none;
     background:var(--accent);
     color:#021526;
-    padding:14px 30px;
+    text-decoration:none;
+    padding:14px 28px;
     border-radius:40px;
     font-weight:bold;
 }
 
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-/* GENERAL */
-
 section{
     padding:100px 10%;
-    scroll-margin-top:100px;
 }
 
 h2{
@@ -199,59 +166,41 @@ h2{
 
 .card{
     background:var(--card-bg);
-    backdrop-filter:blur(10px);
     padding:24px;
     border-radius:20px;
-    box-shadow:0 8px 24px rgba(0,0,0,.25);
 }
 
-/* STATS */
+.card h3{
+    margin-bottom:10px;
+}
 
-.stats{
+.banner-section{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:24px;
 }
 
-/* FORM */
+.banner-image{
+    width:100%;
+    border-radius:20px;
+}
 
 .contact form{
-    max-width:650px;
+    max-width:600px;
     display:grid;
     gap:12px;
 }
 
 input,
 textarea{
+    padding:14px;
     border:none;
     border-radius:10px;
-    padding:14px;
 }
 
 button{
     border:none;
-    cursor:pointer;
 }
-
-/* WHATSAPP */
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25D366;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:28px;
-}
-
-/* FOOTER */
 
 footer{
     text-align:center;
@@ -259,15 +208,13 @@ footer{
     background:rgba(0,0,0,.2);
 }
 
-/* LIGHT MODE */
-
 body.light{
-    background:#f4f7fb;
+    background:#f5f7fa;
     color:#111;
 }
 
 body.light .navbar{
-    background:rgba(255,255,255,.95);
+    background:white;
 }
 
 body.light .nav-links a{
@@ -278,8 +225,6 @@ body.light .card{
     background:white;
     color:#111;
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -306,8 +251,6 @@ body.light .card{
         position:static;
         opacity:1;
         visibility:visible;
-        background:rgba(255,255,255,.05);
-        margin-top:10px;
     }
 
     .hero h1{
@@ -325,29 +268,24 @@ body.light .card{
         <img src="logo3.png" alt="46&2 Consulting">
     </div>
 
-    <div class="controls">
-        <span class="theme-toggle" onclick="toggleTheme()">🌓</span>
-        <span class="hamburger" onclick="toggleMenu()">☰</span>
-    </div>
-
     <ul class="nav-links" id="menu">
 
         <li>
-            <a href="#home">Inicio</a>
+            <a href="#home" id="nav-home">Inicio</a>
         </li>
 
         <li class="nav-item">
-            <a href="#services">Servicios</a>
+            <a href="#services" id="nav-services">Servicios</a>
 
             <ul class="dropdown">
                 <li>
-                    <a href="calc5.html">
+                    <a href="calc5.html" id="menu-calendar">
                         Calendario Partidos
                     </a>
                 </li>
 
                 <li>
-                    <a href="calc5.html">
+                    <a href="calc5.html" id="menu-calculator">
                         Calculadora Honorarios
                     </a>
                 </li>
@@ -355,43 +293,51 @@ body.light .card{
         </li>
 
         <li>
-            <a href="#cases">Casos de Éxito</a>
+            <a href="#cases" id="nav-cases">
+                Casos de Éxito
+            </a>
         </li>
 
         <li>
-            <a href="#contact">Contacto</a>
+            <a href="#contact" id="nav-contact">
+                Contacto
+            </a>
         </li>
 
     </ul>
+
+    <div class="controls">
+
+        <button class="lang-btn" onclick="setLanguage('es')">
+            ES
+        </button>
+
+        <button class="lang-btn" onclick="setLanguage('en')">
+            EN
+        </button>
+
+        <span class="theme-toggle" onclick="toggleTheme()">🌓</span>
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+
+    </div>
+
 </nav>
 
 <section id="home" class="hero">
+
     <div class="hero-content">
 
-        <h1>Transformando Visión en Resultados</h1>
+        <h1 id="hero-title">
+            Transformando Visión en Resultados
+        </h1>
 
-        <p>
-            Impulsamos estrategia, transformación digital y excelencia
-            operacional mediante soluciones orientadas a resultados medibles.
+        <p id="hero-text">
+            Impulsamos estrategia, transformación digital y excelencia operacional mediante soluciones orientadas a resultados medibles.
         </p>
 
-        <a href="#contact" class="btn">
+        <a href="#contact" class="btn" id="hero-btn">
             Agendar Reunión
         </a>
-
-    </div>
-</section>
-
-<section>
-
-    <div class="stats">
-
-        <div class="card">
-            <h3>50+</h3>
-            <p>Proyectos ejecutados</p>
-        </3>
-            <p>Foco en generación de valor</p>
-        </div>
 
     </div>
 
@@ -399,28 +345,50 @@ body.light .card{
 
 <section id="services">
 
-    <h2>Servicios</h2>
+    <h2 id="services-title">
+        Servicios
+    </h2>
 
     <div class="grid">
 
         <div class="card">
-            <h3>Estrategia Corporativa</h3>
-            <p>Definición de visión, objetivos y crecimiento.</p>
+            <h3 id="service1-title">
+                Estrategia Corporativa
+            </h3>
+
+            <p id="service1-text">
+                Definición de visión, objetivos y crecimiento.
+            </p>
         </div>
 
         <div class="card">
-            <h3>Transformación Digital</h3>
-            <p>Modernización tecnológica y automatización.</p>
+            <h3 id="service2-title">
+                Transformación Digital
+            </h3>
+
+            <p id="service2-text">
+                Modernización tecnológica y automatización.
+            </p>
         </div>
 
         <div class="card">
-            <h3>Optimización de Procesos</h3>
-            <p>Eficiencia operativa y reducción de costos.</p>
+            <h3 id="service3-title">
+                Optimización de Procesos
+            </h3>
+
+            <p id="service3-text">
+                Eficiencia operativa y reducción de costos.
+            </p>
         </div>
 
         <div class="card">
-            <h3>Gestión del Cambio</h3>
-            <p>Adopción organizacional y liderazgo.</p>
+            <h3 id="service4-title">
+                Gestión del Cambio
+            </h3>
+
+            <p id="service4-text">
+                Adopción organizacional y liderazgo.
+            </p>
         </div>
 
     </div>
@@ -429,7 +397,9 @@ body.light .card{
 
 <section id="cases">
 
-    <h2>Casos de Éxito</h2>
+    <h2 id="cases-title">
+        Casos de Éxito
+    </h2>
 
     <div class="grid">
 
@@ -452,49 +422,43 @@ body.light .card{
 
 </section>
 
-    <!-- Banner -->
 <section class="banner-section">
-    <img src="banner.png" alt="46&2 Consulting Banner" class="banner-image">
 
-    <img src="bannerpesca.png" alt="46&2 Consulting Banner" class="banner-image">
-</section>
-    
-<!-- Contact -->
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="section-content">
-        <p>
-            Ready to discuss your next transformation initiative?
-        </p>
+    <img
+        src="banner.png"
+        alt="Banner"
+        class="banner-image">
 
-        <br>
+    <img
+        src="bannerpesca.png"
+        alt="Banner Pesca"
+        class="banner-image">
 
-        <p>
-            Email: info@46and2consulting.com<br>
-            Phone: +1 (555) 123-4567
-        </p>
-    </div>
 </section>
 
 <section id="contact" class="contact">
 
-    <h2>Contacto</h2>
+    <h2 id="contact-title">
+        Contacto
+    </h2>
 
     <form>
 
         <input
+            id="name-field"
             type="text"
             placeholder="Nombre">
 
         <input
+            id="email-field"
             type="email"
-            placeholder="Correo Electrónico">
-
-        <textarea
-            rows="5"
+               rows="5"
             placeholder="Mensaje"></textarea>
 
-        <button type="submit" class="btn">
+        <button
+            id="send-btn"
+            type="submit"
+            class="btn">
             Enviar
         </button>
 
@@ -506,20 +470,155 @@ body.light .card{
     © 2026 46&2 Consulting Enterprise
 </footer>
 
-https://wa.me/56912345678
+wa.me/56912345678"
+    style="position:fixed;right:20px;bottom:20px;background:#25D366;color:white;padding:15px 18px;border-radius:50%;text-decoration:none;font-size:24px;">
+    💬
+</a>
 
 <script>
 
 function toggleMenu(){
-    document
-        .getElementById("menu")
-        .classList
-        .toggle("active");
+    document.getElementById("menu").classList.toggle("active");
 }
 
 function toggleTheme(){
     document.body.classList.toggle("light");
 }
+
+const translations = {
+
+es:{
+    navHome:"Inicio",
+    navServices:"Servicios",
+    navCases:"Casos de Éxito",
+    navContact:"Contacto",
+
+    calendar:"Calendario Partidos",
+    calculator:"Calculadora Honorarios",
+
+    heroTitle:"Transformando Visión en Resultados",
+
+    heroText:"Impulsamos estrategia, transformación digital y excelencia operacional mediante soluciones orientadas a resultados medibles.",
+
+    heroBtn:"Agendar Reunión",
+
+    servicesTitle:"Servicios",
+
+    service1Title:"Estrategia Corporativa",
+    service1Text:"Definición de visión, objetivos y crecimiento.",
+
+    service2Title:"Transformación Digital",
+    service2Text:"Modernización tecnológica y automatización.",
+
+    service3Title:"Optimización de Procesos",
+    service3Text:"Eficiencia operativa y reducción de costos.",
+
+    service4Title:"Gestión del Cambio",
+    service4Text:"Adopción organizacional y liderazgo.",
+
+    casesTitle:"Casos de Éxito",
+
+    contactTitle:"Contacto",
+
+    namePlaceholder:"Nombre",
+    emailPlaceholder:"Correo Electrónico",
+    messagePlaceholder:"Mensaje",
+
+    sendBtn:"Enviar"
+},
+
+en:{
+    navHome:"Home",
+    navServices:"Services",
+    navCases:"Success Stories",
+    navContact:"Contact",
+
+    calendar:"Match Calendar",
+    calculator:"Fee Calculator",
+
+    heroTitle:"Transforming Vision Into Results",
+
+    heroText:"We drive strategy, digital transformation and operational excellence through measurable business outcomes.",
+
+    heroBtn:"Schedule Meeting",
+
+    servicesTitle:"Services",
+
+    service1Title:"Corporate Strategy",
+    service1Text:"Vision, objectives and growth planning.",
+
+    service2Title:"Digital Transformation",
+    service2Text:"Technology modernization and automation.",
+
+    service3Title:"Process Optimization",
+    service3Text:"Operational efficiency and cost reduction.",
+
+    service4Title:"Change Management",
+    service4Text:"Organizational adoption and leadership.",
+
+    casesTitle:"Success Stories",
+
+    contactTitle:"Contact",
+
+    namePlaceholder:"Name",
+    emailPlaceholder:"Email Address",
+    messagePlaceholder:"Message",
+
+    sendBtn:"Send"
+}
+};
+
+function setLanguage(lang){
+
+    localStorage.setItem("language",lang);
+
+    const t = translations[lang];
+
+    document.getElementById("nav-home").textContent=t.navHome;
+    document.getElementById("nav-services").textContent=t.navServices;
+    document.getElementById("nav-cases").textContent=t.navCases;
+    document.getElementById("nav-contact").textContent=t.navContact;
+
+    document.getElementById("menu-calendar").textContent=t.calendar;
+    document.getElementById("menu-calculator").textContent=t.calculator;
+
+    document.getElementById("hero-title").textContent=t.heroTitle;
+    document.getElementById("hero-text").textContent=t.heroText;
+    document.getElementById("hero-btn").textContent=t.heroBtn;
+
+    document.getElementById("services-title").textContent=t.servicesTitle;
+
+    document.getElementById("service1-title").textContent=t.service1Title;
+    document.getElementById("service1-text").textContent=t.service1Text;
+
+    document.getElementById("service2-title").textContent=t.service2Title;
+    document.getElementById("service2-text").textContent=t.service2Text;
+
+    document.getElementById("service3-title").textContent=t.service3Title;
+    document.getElementById("service3-text").textContent=t.service3Text;
+
+    document.getElementById("service4-title").textContent=t.service4Title;
+    document.getElementById("service4-text").textContent=t.service4Text;
+
+    document.getElementById("cases-title").textContent=t.casesTitle;
+
+    document.getElementById("contact-title").textContent=t.contactTitle;
+
+    document.getElementById("name-field").placeholder=t.namePlaceholder;
+    document.getElementById("email-field").placeholder=t.emailPlaceholder;
+    document.getElementById("message-field").placeholder=t.messagePlaceholder;
+
+    document.getElementById("send-btn").textContent=t.sendBtn;
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    const lang =
+        localStorage.getItem("language") || "es";
+
+    setLanguage(lang);
+
+});
 
 </script>
 
